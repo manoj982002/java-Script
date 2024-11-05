@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head> 
+    <title>Object to Array</title>  
+</head>  
+<body>  
+<h1>Object to Array</h1>  
+<label for="field1">Field 1:</label>  
+<input type="text" id="field1" placeholder="Enter field name"><br>   
+<label for="value1">Value 1:</label>  
+<input type="text" id="value1" placeholder="Enter field value"><br>   
+<label for="field2">Field 2:</label>  
+<input type="text" id="field2" placeholder="Enter field name"><br>   
+<label for="value2">Value 2:</label>  
+<input type="text" id="value2" placeholder="Enter field value"><br>   
+<button id="createObjectBtn">Create Object and Add to Array</button>  
+<div id="output"></div>  
+
+<script>
+    let objectArray = [];  
+
+    document.getElementById('createObjectBtn').addEventListener('click', () => {  
+        const field1 = document.getElementById('field1').value;     
+        const value1 = document.getElementById('value1').value;     
+        const field2 = document.getElementById('field2').value;     
+        const value2 = document.getElementById('value2').value;  
+        
+        const newObject = {  
+            [field1]: value1,         
+            [field2]: value2,  
+        };  
+        
+        objectArray.push(newObject);  
+        const outputDiv = document.getElementById('output');  
+        outputDiv.innerHTML = `Array of Objects: ${JSON.stringify(objectArray)}`;  
+        
+        const isArray = Array.isArray(objectArray);     
+        outputDiv.innerHTML += `<br>Is objectArray an array? ${isArray}`;  
+    });  
+</script>
+
+</body>  
+</html>

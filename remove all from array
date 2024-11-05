@@ -1,0 +1,24 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <title>Empty Array Elements</title>  
+</head>  
+<body>  
+<h1>Remove All Elements from Array</h1>  
+<label for="arrayInput">Enter array elements (comma-separated):</label><br>  
+<input type="text" id="arrayInput" placeholder="e.g. 2, 5, 9, 6"><br><br>  
+<button onclick="emptyArrayElements()">Remove All Elements</button>   
+<h2>Result:</h2>  
+<p id="result"></p>  
+
+<script>
+    function emptyArrayElements() {  
+        const arrayInput = document.getElementById("arrayInput").value;  
+        let array = arrayInput.split(',').map(Number);  
+        array.length = 0;  
+        document.getElementById("result").innerText = `Array after removing all elements: [${array}]`;  
+    }  
+</script>
+
+</body>  
+</html>

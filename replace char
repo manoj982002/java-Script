@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>String Character Replacement</title> 
+</head> 
+<body> 
+
+<h1>String Character Replacement</h1> 
+
+<button onclick="replaceCharacter()">Replace Character</button> 
+
+<script>
+    function replaceCharacter() { 
+        const originalString = 'Mr Red has a red house and a red car'; 
+        const charToReplace = prompt("Enter the character you want to replace:", "red"); 
+        const newChar = prompt("Enter the new character:", "blue"); 
+        const newText = originalString.replace(new RegExp(charToReplace, 'g'), newChar); 
+        console.log("Original String: " + originalString); 
+        console.log("Modified String: " + newText); 
+    }
+</script>
+
+</body> 
+</html>

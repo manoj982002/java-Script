@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <title>Remove Element from Array</title>  
+</head>  
+<body>  
+<h1>Array Element Remover</h1>  
+<label for="arrayInput">Enter array elements (comma-separated):</label><br>  
+<input id="arrayInput" placeholder="e.g. 2, 5, 9, 6"><br><br>  
+<label for="elementToRemove">Element to remove:</label><br>  
+<input id="elementToRemove" placeholder="e.g. 5"><br><br>  
+<button onclick="removeArrayElement()">Remove Element</button>  
+<h2>Result:</h2>  
+<p id="result"></p>  
+
+<script>
+    function removeArrayElement() {  
+        const arrayInput = document.getElementById("arrayInput").value;  
+        let array = arrayInput.split(',').map(Number);  
+        const elementToRemove = parseInt(document.getElementById("elementToRemove").value);  
+        const index = array.indexOf(elementToRemove);     
+        if (index > -1) {  
+            array.splice(index, 1);  
+            document.getElementById("result").innerText = `Updated Array: [${array}]`;  
+        } else {  
+            document.getElementById("result").innerText = "Element Not Found!";  
+        }  
+    }  
+</script>
+
+</body>  
+</html>

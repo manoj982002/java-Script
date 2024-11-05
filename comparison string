@@ -1,0 +1,27 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <title>String Comparison</title>  
+</head>  
+<body>  
+<h1>String Comparison</h1>  
+<label for="string1">String 1:</label>  
+<input type="text" id="string1" value="JavaScript Program"><br><br>   
+<label for="string2">String 2:</label>  
+<input type="text" id="string2" value="javascript program"><br><br>   
+<button onclick="compareStrings()">Compare Strings</button>  
+<h2>Result:</h2>  
+<p id="result"></p>  
+
+<script>
+    function compareStrings() {     
+        const string1 = document.getElementById('string1').value;     
+        const string2 = document.getElementById('string2').value;   
+        const result = string1.localeCompare(string2, undefined, { sensitivity: 'base' });  
+        const resultText = result === 0 ? 'The strings are similar.' : 'The strings are not similar.';  
+        document.getElementById('result').innerHTML = resultText;  
+    }  
+</script>
+
+</body>  
+</html>

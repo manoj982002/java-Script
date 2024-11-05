@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <title>Check Element in Array</title>  
+</head>  
+<body>  
+<h1>Array Element Checker</h1>  
+<label for="arrayInput">Enter array elements (comma-separated):</label><br>  
+<input type="text" id="arrayInput" placeholder="e.g. 2, 5, 9, 6"><br><br>  
+<label for="elementToCheck">Element to check:</label><br>  
+<input type="text" id="elementToCheck" placeholder="e.g. 5"><br><br>   
+<button onclick="checkArrayElement()">Check Element</button>   
+<h2>Result:</h2>  
+<p id="result"></p>  
+
+<script>
+    function checkArrayElement() {  
+        const arrayInput = document.getElementById("arrayInput").value;  
+        let array = arrayInput.split(',').map(Number);  
+        const elementToCheck = parseInt(document.getElementById("elementToCheck").value);  
+        const index = array.indexOf(elementToCheck);  
+        if (index > -1) {  
+            document.getElementById("result").innerText = `Element ${elementToCheck} found at index ${index}.`;     
+        } else {  
+            document.getElementById("result").innerText = "Element Not Found!";  
+        }  
+    }  
+</script>
+
+</body>  
+</html>
